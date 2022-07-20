@@ -9,7 +9,7 @@ img2 = np.array([[3, 0, 1, 2, 7, 4],
                 [4, 2, 1, 6, 2, 8],
                 [2, 4, 5, 2, 3, 9]])
 
-path = "2022-07-08_12-42.png"
+path = "sources/t2_1.tiff"
 img = cv2.imread(path)
 img = np.asarray(img)
 print(img.shape)
