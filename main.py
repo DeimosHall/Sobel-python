@@ -1,6 +1,6 @@
 import numpy as np
-from filters import border_filter
 import cv2
+from filters import border_filter
 
 img2 = np.array([[3, 0, 1, 2, 7, 4],
                 [1, 5, 8, 9, 3, 1],
