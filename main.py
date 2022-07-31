@@ -1,24 +1,14 @@
-import numpy as np
-import cv2
 from filters import border_filter
+from filters import OpenCV
 
-img2 = np.array([[3, 0, 1, 2, 7, 4],
-                [1, 5, 8, 9, 3, 1],
-                [2, 7, 2, 5, 1, 3],
-                [0, 1, 3, 1, 7, 8],
-                [4, 2, 1, 6, 2, 8],
-                [2, 4, 5, 2, 3, 9]])
-
-path = "2022-07-08_12-42.png"
-img = cv2.imread(path)
-img = np.asarray(img)
-print(img.shape)
-gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-print(gray_img.shape)
-print(gray_img)
-
-image_1 = border_filter.ManualSobel(img)
-image_1.show_img()
-sobel_image = image_1.get_borders()
-print(sobel_image)
-print('Program finished')
+path = "sources/t3.tiff"
+image_1 = OpenCV.Filter(path)
+image_1.show_size()
+image_1.show_image()
+# image_1.show_gray_image()
+# image_1.show_borders()
+image_1.show_threshold()
+pixel = image_1.get_top_left_border()
+# 49, 132 - 308, 171
+print(pixel)
+image_1.cut_image()

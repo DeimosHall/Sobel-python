@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
 
+
 class ManualSobel:
 
     def __init__(self, img):
@@ -8,6 +9,8 @@ class ManualSobel:
         self._img_rows = np.size(img, 0)
         self._img_cols = np.size(img, 1)
         self._img_borders = np.zeros(self._img.shape)
+        self.width_img = img.shape[0]
+        self.height_img = img.shape[1]
         self._gx = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]])
         self._gy = np.array([[-1, -2, -1], [0, 0, 0], [1, 2, 1]])
         self._kernel_rows_index = 0
@@ -42,3 +45,7 @@ class ManualSobel:
         cv2.imshow("image", self._img)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
+
+    def show_size(self):
+        print("Image size")
+        print(f"Width: {self.width_img}, Height: {self.height_img}")
