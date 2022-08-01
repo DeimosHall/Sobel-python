@@ -85,10 +85,9 @@ class Filter:
             x = 0
         print(f"Top edge: {self._top_left_edge[0]},{self._top_left_edge[1]}")
         print(f"Bottom edge: {self._bottom_right_edge[0]},{self._bottom_right_edge[1]}")
-        return self._thresh[140, 60]
 
     def show_cropped_image(self):
-        # 56, 141 - 321, 183
+        self.calculate_borders()
         x1 = self._top_left_edge[0]
         y1 = self._top_left_edge[1]
         x2 = self._bottom_right_edge[0]
